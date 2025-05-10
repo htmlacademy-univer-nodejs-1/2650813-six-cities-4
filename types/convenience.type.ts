@@ -6,4 +6,4 @@ export enum Convenience {
     Washer = 'Washer',
     Towels = 'Towels',
     Fridge = 'Fridge'
-  }
+}

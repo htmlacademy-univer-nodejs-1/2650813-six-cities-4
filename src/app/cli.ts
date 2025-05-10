@@ -11,6 +11,7 @@ export default class CliApplication {
   private parseCommand(cliArguments: string[]): ParsedCommand {
     const parsedCommand: ParsedCommand = {};
     let command = '';
+
     return cliArguments.reduce((acc, item) => {
       if (item.startsWith('--')) {
         acc[item] = [];
@@ -18,6 +19,7 @@ export default class CliApplication {
       } else if (command && item) {
         acc[command].push(item);
       }
+
       return acc;
     }, parsedCommand);
   }

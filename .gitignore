@@ -1,4 +1,5 @@
 .vscode/
+/mocks/data.tsv
 /node_modules/
 /build/
 /lib/

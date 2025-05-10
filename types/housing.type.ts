@@ -3,4 +3,4 @@ export enum Housing {
     House = 'House',
     Room = 'Room',
     Hotel = 'Hotel'
-  }
+}

@@ -4,4 +4,4 @@ export type User = {
     avatar?: string;
     password: string;
     userType: 'normal' | 'pro';
-  }
+}
