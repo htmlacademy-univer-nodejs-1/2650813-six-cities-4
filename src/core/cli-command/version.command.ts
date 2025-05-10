@@ -1,15 +1,15 @@
+import { readFileSync } from 'node:fs';
+import { resolve } from 'node:path';
 import {CliCommandInterface} from './cli-command.interface.js';
-import {readFileSync} from 'node:fs';
-import path from 'node:path';
 import chalk from 'chalk';
 
 export default class VersionCommand implements CliCommandInterface {
   public readonly name = '--version';
 
   private readVersion(): string {
-    const contentPageJson = readFileSync(path.resolve('./package.json'), 'utf-8');
-    const content = JSON.parse(contentPageJson);
-    return content.version;
+    const jsonContent = readFileSync(resolve('package.json'), 'utf-8');
+    const parsedContent = JSON.parse(jsonContent);
+    return parsedContent.version;
   }
 
   public async execute(): Promise<void> {
