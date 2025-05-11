@@ -1,11 +1,8 @@
-import typegoose, {defaultClasses, getModelForClass} from '@typegoose/typegoose';
-import {Offer} from '../../../types/offer.type.js';
-import {City} from '../../../types/city.type.js';
-import {Housing} from '../../../types/housing.type.js';
-import {Convenience} from '../../../types/convenience.type.js';
+import typegoose, {defaultClasses, getModelForClass, Ref} from '@typegoose/typegoose';
+import {City} from '../../../types/city.enum.js';
+import {Convenience} from '../../../types/convenience.enum.js';
+import {Housing} from '../../../types/housing.enum.js';
 import {UserEntity} from '../user/user.entity.js';
-import {User} from '../../../types/user.type.js';
-import {Coordinate} from '../../../types/coordinate.type.js';
 
 const {prop, modelOptions} = typegoose;
 
@@ -20,18 +17,18 @@ export interface OfferEntity extends defaultClasses.Base {
 })
 
 // eslint-disable-next-line @typescript-eslint/no-unsafe-declaration-merging
-export class OfferEntity extends defaultClasses.TimeStamps implements Offer {
+export class OfferEntity extends defaultClasses.TimeStamps {
   @prop({
     required: true,
-    minlength: [10, 'Min length for name is 10'],
-    maxlength: [100, 'Min length for name is 100']
+    minlength: [10, 'min length for name = 10'],
+    maxlength: [100, 'max length for name = 100']
   })
   public name!: string;
 
   @prop({
     required: true,
-    minlength: [20, 'Min length for description is 20'],
-    maxlength: [1024, 'Min length for description is 1024']
+    minlength: [20, 'min length for description = 20'],
+    maxlength: [1024, 'max length for description = 1024']
   })
   public description!: string;
 
@@ -46,7 +43,7 @@ export class OfferEntity extends defaultClasses.TimeStamps implements Offer {
   public city!: City;
 
   @prop({required: true})
-  public previewImg!: string;
+  public previewImage!: string;
 
   @prop({
     required: true,
@@ -55,10 +52,10 @@ export class OfferEntity extends defaultClasses.TimeStamps implements Offer {
   public images!: string[];
 
   @prop({required: true})
-  public flagIsPremium!: boolean;
+  public isPremium!: boolean;
 
   @prop({required: true})
-  public flagIsFavourites!: boolean;
+  public isFavourite!: boolean;
 
   @prop({required: true})
   public rating!: 1 | 2 | 3 | 4 | 5;
@@ -68,18 +65,18 @@ export class OfferEntity extends defaultClasses.TimeStamps implements Offer {
     type: () => String,
     enum: Housing
   })
-  public typeHousing!: Housing;
+  public housing!: Housing;
 
   @prop({required: true})
-  public countRooms!: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
+  public roomsCount!: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
 
   @prop({required: true})
-  public countPeople!: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
+  public peopleCount!: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
 
   @prop({
     required: true,
-    min: [100, 'Min length for price is 100'],
-    max: [100000, 'Min length for price is 100000'],
+    min: [100, 'min length for price = 100'],
+    max: [100000, 'max length for price = 100000'],
   })
   public price!: number;
 
@@ -88,16 +85,16 @@ export class OfferEntity extends defaultClasses.TimeStamps implements Offer {
     type: () => String,
     enum: Convenience
   })
-  public conveniences!: Convenience;
+  public convenience!: Convenience;
 
   @prop({
-    required: true,
     ref: UserEntity,
+    required: true
   })
-  public author!: User;
+  public userId!: Ref<UserEntity>;
 
   @prop({default: 0})
-  public countComments!: number;
+  public commentsCount!: number;
 
   @prop({
     required: true,
@@ -105,8 +102,7 @@ export class OfferEntity extends defaultClasses.TimeStamps implements Offer {
   })
 
   @prop({required: true})
-  public coordinates!: Coordinate;
-
+  public coordinates!: number[];
 }
 
 export const OfferModel = getModelForClass(OfferEntity);

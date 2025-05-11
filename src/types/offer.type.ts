@@ -1,25 +1,24 @@
-import {Housing} from './housing.type.js';
-import {Convenience} from './convenience.type.js';
+import {Convenience} from './convenience.enum.js';
 import {User} from './user.type.js';
-import {City} from './city.type.js';
-import {Coordinate} from './coordinate.type.js';
+import {City} from './city.enum.js';
+import {Housing} from './housing.enum.js';
 
 export type Offer = {
   name: string;
   description: string;
   date: Date;
   city: City;
-  previewImg: string;
+  previewImage: string;
   images: string[];
-  flagIsPremium: boolean;
-  flagIsFavourites: boolean;
+  isPremium: boolean;
+  isFavourite: boolean;
   rating: 1 | 2 | 3 | 4 | 5;
-  typeHousing: Housing;
-  countRooms: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
-  countPeople: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
+  housing: Housing;
+  roomsCount: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
+  peopleCount: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
   price: number;
-  conveniences: Convenience;
+  convenience: Convenience;
   author: User;
-  countComments: number;
-  coordinates: Coordinate;
+  commentsCount: number;
+  coordinates: number[];
 }

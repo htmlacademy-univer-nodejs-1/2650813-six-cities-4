@@ -1,7 +1,7 @@
 import {ConfigInterface} from './config.interface.js';
 import {LoggerInterface} from '../logger/logger.interface.js';
 import {config} from 'dotenv';
-import {configRestSchema, RestSchema} from './rest.schema.js';
+import {restSchemaConfig, RestSchema} from './rest.schema.js';
 import {inject, injectable} from 'inversify';
 import {AppComponent} from '../../types/app-component.enum.js';
 
@@ -14,9 +14,9 @@ export default class ConfigService implements ConfigInterface<RestSchema> {
     if (parsedOutput.error) {
       throw new Error('Can\'t read .env file');
     }
-    configRestSchema.load({});
-    configRestSchema.validate({allowed: 'strict', output: this.logger.info});
-    this.config = configRestSchema.getProperties();
+    restSchemaConfig.load({});
+    restSchemaConfig.validate({allowed: 'strict', output: this.logger.info});
+    this.config = restSchemaConfig.getProperties();
     this.logger.info('.env file found and successfully parsed');
   }
 

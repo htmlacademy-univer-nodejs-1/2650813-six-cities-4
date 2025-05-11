@@ -1,4 +1,4 @@
-import CreateCommentDto from './dto/create-comment.dto.js';
+import CreateCommentDto from './dto/create-comment.dto';
 import {CommentEntity} from './comment.entity.js';
 import {DocumentType} from '@typegoose/typegoose';
 

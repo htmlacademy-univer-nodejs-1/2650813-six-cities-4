@@ -1,14 +1,13 @@
 import {inject, injectable} from 'inversify';
 import mongoose, {Mongoose} from 'mongoose';
 import {setTimeout} from 'node:timers/promises';
-import {DatabaseClientInterface} from './db-client.interface.js';
+import {DbClientInterface} from './db-client.interface.js';
 import {AppComponent} from '../../types/app-component.enum.js';
 import {LoggerInterface} from '../logger/logger.interface.js';
+import {MONGO_RETRY_COUNT, MONGO_RETRY_TIMEOUT} from '../helpers/constants.js';
 
-const RETRY_COUNT = 5;
-const RETRY_TIMEOUT = 1000;
 @injectable()
-export default class MongoClientService implements DatabaseClientInterface {
+export default class MongoClientService implements DbClientInterface {
   private isConnected = false;
   private mongooseInstance: Mongoose | null = null;
 
@@ -19,13 +18,13 @@ export default class MongoClientService implements DatabaseClientInterface {
 
   private async _connectWithRetry(uri: string): Promise<Mongoose> {
     let attempt = 0;
-    while (attempt < RETRY_COUNT) {
+    while (attempt < MONGO_RETRY_COUNT) {
       try {
         return await mongoose.connect(uri);
       } catch (error) {
         attempt++;
         this.logger.error(`Failed to connect to the database. Attempt ${attempt}`);
-        await setTimeout(RETRY_TIMEOUT);
+        await setTimeout(MONGO_RETRY_TIMEOUT);
       }
     }
     this.logger.error(`Unable to establish database connection after ${attempt}`);

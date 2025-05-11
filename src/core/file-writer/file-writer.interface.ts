@@ -1,5 +1,5 @@
 export interface FileWriterInterface {
-    readonly filename: string;
+  readonly filename: string;
 
-    write(row: string): void;
+  write(row: string): void;
 }

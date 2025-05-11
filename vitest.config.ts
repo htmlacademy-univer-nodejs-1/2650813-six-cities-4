@@ -1,3 +1,7 @@
 import {defineConfig} from 'vitest/config';
 
-defineConfig({});
+export default defineConfig({
+  test: {
+    reporters: ['default']
+  },
+});

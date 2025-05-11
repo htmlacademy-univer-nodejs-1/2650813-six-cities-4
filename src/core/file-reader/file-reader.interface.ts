@@ -1,5 +1,5 @@
 export interface FileReaderInterface {
-    readonly filename: string;
+  readonly filename: string;
 
-    read(): void;
-  }
+  read(): void;
+}

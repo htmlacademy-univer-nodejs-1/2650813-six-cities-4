@@ -4,7 +4,7 @@ import {createOffer} from '../helpers/offers.js';
 import {CliCommandInterface} from './cli-command.interface.js';
 import {UserServiceInterface} from '../modules/user/user-service.interface.js';
 import {OfferServiceInterface} from '../modules/offer/offer-service.interface.js';
-import {DatabaseClientInterface} from '../db-client/db-client.interface.js';
+import {DbClientInterface} from '../db-client/db-client.interface.js';
 import {LoggerInterface} from '../logger/logger.interface.js';
 import ConsoleLoggerService from '../logger/console.service.js';
 import OfferService from '../modules/offer/offer.service.js';
@@ -14,15 +14,13 @@ import {OfferModel} from '../modules/offer/offer.entity.js';
 import MongoClientService from '../db-client/mongo-client.service.js';
 import {Offer} from '../../types/offer.type.js';
 import {getMongoURI} from '../helpers/db.js';
-
-const DEFAULT_DB_PORT = '27017';
-const DEFAULT_USER_PASSWORD = '123456';
+import {DEFAULT_USER_PASSWORD, DEFAULT_DB_PORT} from '../helpers/constants.js';
 
 export default class ImportCommand implements CliCommandInterface {
   public readonly name = '--import';
   private userService!: UserServiceInterface;
   private offerService!: OfferServiceInterface;
-  private databaseService!: DatabaseClientInterface;
+  private databaseService!: DbClientInterface;
   private readonly logger: LoggerInterface;
   private salt!: string;
 
@@ -42,12 +40,12 @@ export default class ImportCommand implements CliCommandInterface {
     }, this.salt);
 
     if (!user) {
-      throw new Error('Not find user');
+      throw new Error('Not found user');
     }
 
     await this.offerService.create({
       ...offer,
-      author: user
+      userId: user.id
     });
   }
 

@@ -26,16 +26,16 @@ export class CommentEntity extends defaultClasses.TimeStamps {
     ref: OfferEntity,
     required: true
   })
-  public offerId: Ref<OfferEntity> | undefined;
+  public offerId!: Ref<OfferEntity>;
 
   @prop({
     ref: UserEntity,
     required: true,
   })
-  public userId: Ref<UserEntity> | undefined;
+  public userId!: Ref<UserEntity>;
 
   @prop({required: true})
-  public datePublication!: Date;
+  public date!: Date;
 
   @prop({required: true})
   public rating!: number;

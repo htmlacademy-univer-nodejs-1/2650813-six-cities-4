@@ -1,14 +1,14 @@
 .vscode/
-/mocks/data.tsv
 /node_modules/
-./mongodb
 /build/
 /lib/
 /dist/
 /docs/
+./mongodb
 .idea/*
 
 .DS_Store
 coverage
 *.log
 *.env
+/upload/
