@@ -1,5 +1,5 @@
 export interface CliCommandInterface {
-    readonly name: string;
+  readonly name: string;
 
-    execute(...parameters: string[]): void;
-  }
+  execute(...parameters: string[]): void;
+}
