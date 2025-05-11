@@ -1,5 +1,5 @@
-export function generateRandomValue(min: number, max: number, numAfterDigit = 0) {
-  return +((Math.random() * (max - min)) + min).toFixed(numAfterDigit);
+export function generateRandomValue(min: number, max: number, countAfterDigit = 0) {
+  return +((Math.random() * (max - min)) + min).toFixed(countAfterDigit);
 }
 
 export function getRandomItems<T>(items: T[]): T[] {
