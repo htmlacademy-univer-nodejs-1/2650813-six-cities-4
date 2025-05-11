@@ -1,6 +1,7 @@
 .vscode/
 /mocks/data.tsv
 /node_modules/
+./mongodb
 /build/
 /lib/
 /dist/
@@ -10,3 +11,4 @@
 .DS_Store
 coverage
 *.log
+*.env

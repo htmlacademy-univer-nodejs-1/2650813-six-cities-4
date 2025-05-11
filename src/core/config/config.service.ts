@@ -3,7 +3,7 @@ import {LoggerInterface} from '../logger/logger.interface.js';
 import {config} from 'dotenv';
 import {configRestSchema, RestSchema} from './rest.schema.js';
 import {inject, injectable} from 'inversify';
-import {AppComponent} from '../../../types/app-component.enum.js';
+import {AppComponent} from '../../types/app-component.enum.js';
 
 @injectable()
 export default class ConfigService implements ConfigInterface<RestSchema> {

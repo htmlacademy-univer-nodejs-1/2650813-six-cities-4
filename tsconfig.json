@@ -22,10 +22,11 @@
     "outDir": "./dist",
     "emitDecoratorMetadata": true,
     "types": [
-      "node",
+      "node"
     ],
     "lib": [
-      "ESNext"
+      "ESNext",
+      "dom"
     ]
   },
   "include": [
