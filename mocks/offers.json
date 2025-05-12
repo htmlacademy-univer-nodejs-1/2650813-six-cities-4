@@ -1,0 +1,164 @@
+[
+  {
+    "name": "Chic Flat Overlooking the Eiffel Tower",
+    "description": "Just a short stroll from the Eiffel Tower, this contemporary flat features floor-to-ceiling windows, blending Parisian elegance with modern comforts for an unforgettable stay.",
+    "publishDate": "2022-08-15T11:30:00.000Z",
+    "city": "Paris",
+    "previewImage": "https://example.com/images/apartment1_preview.jpg",
+    "photos": [
+      "https://images.example.com/paris-flat-main.jpg",
+      "https://images.example.com/paris-flat-2.jpg",
+      "https://images.example.com/paris-flat-3.jpg"
+    ],
+    "isPremium": true,
+    "isFavorite": false,
+    "rating": 4.9,
+    "type": "apartment",
+    "rooms": 2,
+    "guests": 5,
+    "price": 5500,
+    "amenities": [
+      "Wi-Fi",
+      "Laptop friendly workspace",
+      "Washing machine",
+      "Air conditioning"
+    ],
+    "commentsCount": 23,
+    "author": "Clara Dubois",
+    "coordinates": {
+      "lat": 48.8570,
+      "lng": 2.3519
+    }
+  },
+  {
+    "name": "Historic Cologne Loft-Style Studio",
+    "description": "Discover authentic Cologne charm in this renovated studio tucked into a heritage building. High ceilings and contemporary fixtures make it the perfect urban retreat.",
+    "publishDate": "2024-10-21T09:15:00.000Z",
+    "city": "Cologne",
+    "previewImage": "https://images.example.com/cologne-studio-main.jpg",
+    "photos": [
+      "https://images.example.com/cologne-studio-1.jpg",
+      "https://images.example.com/cologne-studio-2.jpg",
+      "https://images.example.com/cologne-studio-3.jpg"
+    ],
+    "isPremium": false,
+    "isFavorite": true,
+    "rating": 4.6,
+    "type": "room",
+    "rooms": 1,
+    "guests": 1,
+    "price": 2500,
+    "amenities": [
+      "Wi-Fi",
+      "Heating",
+      "Kitchen"
+    ],
+    "commentsCount": 15,
+    "author": "Max Bauer",
+    "coordinates": {
+      "lat": 50.9375,
+      "lng": 6.9603
+    }
+  },
+  {
+    "name": "Spacious Family Residence near Brussels",
+    "description": "Ideal for families, this sizeable home provides generous living areas both indoors and outdoors. Relax in the secluded garden located in a calm neighborhood just a short drive from central Brussels.",
+    "publishDate": "2024-10-04T14:20:00.000Z",
+    "city": "Brussels",
+    "previewImage": "https://images.example.com/images/house1_preview.jpg",
+    "photos": [
+      "https://images.example.com/images/house1_1.jpg",
+      "https://images.example.com/images/house1_2.jpg",
+      "https://images.example.com/images/house1_3.jpg",
+      "https://images.example.com/images/house1_4.jpg"
+    ],
+    "isPremium": true,
+    "isFavorite": false,
+    "rating": 4.8,
+    "type": "house",
+    "rooms": 6,
+    "guests": 9,
+    "price": 8000,
+    "amenities": [
+      "Wi-Fi",
+      "Kitchen",
+      "Washer",
+      "Dryer",
+      "Air conditioning",
+      "Heating",
+      "BBQ grill",
+      "Free parking"
+    ],
+    "commentsCount": 35,
+    "author": "Jean Dupont",
+    "coordinates": {
+      "lat": 50.850345,
+      "lng": 4.351723
+    }
+  },
+  {
+    "name": "Stylish Hotel Room in Amsterdam's Center",
+    "description": "Experience a comfortable stay in this elegantly furnished hotel room in the heart of Amsterdam. Take advantage of the hotel's amenities, including a restaurant with stunning views of the canals.",
+    "publishDate": "2024-11-11T11:45:00.000Z",
+    "city": "Amsterdam",
+    "previewImage": "https://example.com/images/hotel1_preview.jpg",
+    "photos": [
+      "https://example.com/images/hotel1_1.jpg",
+      "https://example.com/images/hotel1_2.jpg",
+      "https://example.com/images/hotel1_3.jpg"
+    ],
+    "isPremium": false,
+    "isFavorite": false,
+    "rating": 4.3,
+    "type": "hotel",
+    "rooms": 1,
+    "guests": 2,
+    "price": 3650,
+    "amenities": [
+      "Wi-Fi",
+      "Air conditioning",
+      "Heating",
+      "Breakfast included"
+    ],
+    "commentsCount": 12,
+    "author": "Emma de Cam",
+    "coordinates": {
+      "lat": 52.370214,
+      "lng": 4.995268
+    }
+  },
+  {
+    "name": "Attractive Apartment with Elbe Views in Hamburg",
+    "description": "This attractive apartment offers stunning vistas of the Elbe River and is situated in a trendy area with easy access to Hamburg's top attractions.",
+    "publishDate": "2024-01-18T10:00:00.000Z",
+    "city": "Hamburg",
+    "previewImage": "https://example.com/images/hamburg2_preview.jpg",
+    "photos": [
+      "https://example.com/images/hamburg1-1.jpg",
+      "https://example.com/images/hamburg1-2.jpg",
+      "https://example.com/images/hamburg1-3.jpg"
+    ],
+    "isPremium": true,
+    "isFavorite": true,
+    "rating": 4.9,
+    "type": "apartment",
+    "rooms": 3,
+    "guests": 5,
+    "price": 5100,
+    "amenities": [
+      "Wi-Fi",
+      "Kitchen",
+      "Air conditioning",
+      "Heating",
+      "Washer",
+      "Balcony",
+      "River view"
+    ],
+    "commentsCount": 29,
+    "author": "Thomas Member",
+    "coordinates": {
+      "lat": 53.551056,
+      "lng": 9.993382
+    }
+  }
+]
