@@ -4,11 +4,11 @@
 /lib/
 /dist/
 /docs/
-./mongodb
 .idea/*
+
+uploads/
 
 .DS_Store
 coverage
 *.log
-*.env
-/upload/
+.env
